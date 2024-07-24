@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 session_start();
 if (isset($_SESSION['usuario'])) {
     header("Location: crud.php");
@@ -7,4 +7,4 @@ if (isset($_SESSION['usuario'])) {
     header("Location: login.php");
     exit();
 }
-?> -->
+?>
