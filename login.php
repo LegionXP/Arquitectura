@@ -1,38 +1,49 @@
-<?php
-session_start();
-include('db.php');
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+<?php 
+session_start(); 
+include "db_conn.php";
+
+if (isset($_POST['uname']) && isset($_POST['password'])) {
+
+	function validate($data){
+       $data = trim($data);
+	   $data = stripslashes($data);
+	   $data = htmlspecialchars($data);
+	   return $data;
+	}
+
+	$uname = validate($_POST['uname']);
+	$pass = validate($_POST['password']);
+
+	if (empty($uname)) {
+		header("Location: index.php?error=User Name is required");
+	    exit();
+	}else if(empty($pass)){
+        header("Location: index.php?error=Password is required");
+	    exit();
+	}else{
+		$sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
+
+		$result = mysqli_query($conn, $sql);
+
+		if (mysqli_num_rows($result) === 1) {
+			$row = mysqli_fetch_assoc($result);
+            if ($row['user_name'] === $uname && $row['password'] === $pass) {
+            	$_SESSION['user_name'] = $row['user_name'];
+            	$_SESSION['name'] = $row['name'];
+            	$_SESSION['id'] = $row['id'];
+            	header("Location: home.php");
+		        exit();
+            }else{
+				header("Location: index.php?error=Incorect User name or password");
+		        exit();
+			}
+		}else{
+			header("Location: index.php?error=Incorect User name or password");
+	        exit();
+		}
+	}
+	
+}else{
+	header("Location: index.php");
+	exit();
 }
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $usuario = $_POST['usuario'];
-    $contrasena = $_POST['contrasena'];
-
-    $sql = "SELECT * FROM users WHERE usuario = '$usuario'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if (password_verify($contrasena, $row['contrasena'])) {
-            $_SESSION['usuario'] = $usuario;
-            header("Location: crud.php");
-        } else {
-            echo "Contraseña incorrecta";
-        }
-    } else {
-        echo "Usuario no encontrado";
-    }
-}
-?>
-
-<link rel="stylesheet" href="login.css">
-
-<form method="post" action="">
-    <p>Usuario: </p><input type="text" name="usuario" required><br>
-    <p>Contraseña: </p><input type="password" name="contrasena" required><br>
-    <input type="submit" value="Iniciar Sesión">
-</form>
-
-<!-- prueba de commit -->
