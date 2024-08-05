@@ -65,7 +65,7 @@ h1 {
 	color: #fff;
 }
 
-a {
+.logout {
 	float: right;
 	background: #555;
 	padding: 10px 15px;
@@ -75,6 +75,6 @@ a {
 	border: none;
 	text-decoration: none;
 }
-a:hover{
+.logaout:hover{
 	opacity: .7;
 }
