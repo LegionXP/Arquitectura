@@ -15,7 +15,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
      <?php include 'header.php' ?>
 
      <h1>Hello, <?php echo $_SESSION['name']; ?></h1>
-     <a id="logout" href="logout.php">Logout</a>
+     <a class="regresar" href="logout.php">Logout</a>
 </body>
 </html>
 

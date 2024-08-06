@@ -13,6 +13,9 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="estilosIndex.css">
 </head>
 <body>
+
+    <?php include '../header.php' ?>
+
     <h1>Lista de Usuarios</h1>
     <a href="create.php">Crear Nuevo Usuario</a>
     <table border="1">
