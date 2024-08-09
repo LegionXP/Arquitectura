@@ -22,7 +22,7 @@ body {
 }
 
 h2 {
-    color: #5cb85c;
+    color: #d41a1a;
     margin-bottom: 20px;
 }
 
@@ -35,7 +35,7 @@ input[type="number"], input[type="text"], input[type="password"], select {
     width: calc(100% - 20px);
     padding: 10px;
     margin: 5px 0;
-    border: 1px solid #ccc;
+    border: 1px solid #e43d3d;
     border-radius: 5px;
     display: block;
     margin-left: auto;
@@ -45,7 +45,7 @@ input[type="number"], input[type="text"], input[type="password"], select {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #5cb85c;
+    background-color: #d41a1a;
     color: white;
     border: none;
     border-radius: 5px;
@@ -55,14 +55,14 @@ button {
 }
 
 button:hover {
-    background-color: #4cae4c;
+    background-color: #a80a0a;
 }
 
 .link-button {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
-    background-color: #5cb85c;
+    background-color: #d41a1a;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -74,7 +74,7 @@ button:hover {
 }
 
 .link-button:hover {
-    background-color: #4cae4c;
+    background-color: #a80a0a;
 }
 
 table {
@@ -84,26 +84,26 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #c45353;
     padding: 10px;
     text-align: center;
 }
 
 th {
-    background-color: #5cb85c;
+    background-color: #d41a1a;
     color: white;
 }
 
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #dd7a7a;
 }
 
 tr:hover {
-    background-color: #ddd;
+    background-color: #dd7a7a;
 }
 
 a {
-    color: #5cb85c;
+    color: #c45353;
     text-decoration: none;
 }
 
@@ -116,7 +116,7 @@ a:hover {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
-    background-color: #5cb85c;
+    background-color: #c45353;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -125,7 +125,7 @@ a:hover {
 }
 
 .link-button:hover {
-    background-color: #4cae4c;
+    background-color: #c45353;
 }
 
 /* Contenedor de productos agregados */
