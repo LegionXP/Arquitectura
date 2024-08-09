@@ -52,7 +52,7 @@ if (isset($_POST['create_invoice'])) {
         }
 
         $date = date('Y-m-d');
-        $daily_file = '../daily_earnings.txt';
+        $daily_file = '../ganancias.txt';
 
         if (file_exists($daily_file)) {
             $file_content = file_get_contents($daily_file);
